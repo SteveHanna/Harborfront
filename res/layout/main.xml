@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout android:id="@+id/dashboard" 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="gone"
+    android:orientation="vertical">
+
+    <com.appharbor.ui.DashboardLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/home_btn_builds"
+            style="@style/DashboardButton"
+            android:drawableTop="@drawable/ic_menu_builds"
+            android:onClick="onDashButtonClick"
+            android:text="Builds" />
+        
+        <Button
+            android:id="@+id/home_btn_errors"
+            style="@style/DashboardButton"
+            android:drawableTop="@drawable/ic_menu_error"
+            android:onClick="onDashButtonClick"
+            android:text="Errors" />
+        
+        <Button
+            android:id="@+id/home_btn_hostnames"
+            style="@style/DashboardButton"
+            android:drawableTop="@drawable/ic_menu_hostnames"
+            android:onClick="onDashButtonClick"
+            android:text="Hostnames" />
+
+        <Button
+            android:id="@+id/home_btn_collaborators"
+            style="@style/DashboardButton"
+            android:drawableTop="@drawable/ic_menu_collaborators"
+            android:onClick="onDashButtonClick"
+            android:text="Collaborators" />
+
+        <Button
+            android:id="@+id/home_btn_config_variables"
+            style="@style/DashboardButton"
+            android:drawableTop="@drawable/ic_menu_config_variables"
+            android:onClick="onDashButtonClick"
+            android:text="Config Variables" />
+
+        <Button
+            android:id="@+id/home_btn_service_hooks"
+            style="@style/DashboardButton"
+            android:drawableTop="@drawable/ic_menu_service_hooks"
+            android:onClick="onDashButtonClick"
+            android:text="Service Hooks" />
+    </com.appharbor.ui.DashboardLayout>
+    
+   </LinearLayout>

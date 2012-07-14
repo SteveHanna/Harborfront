@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" android:paddingLeft="3dp" android:paddingRight="3dp">
+     <LinearLayout
+         android:id="@+id/buildDetailsLayout"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:orientation="vertical" >
+    
+ <!--   <TextView
+        android:id="@+id/buildDetailsLabel"
+        android:paddingTop="10dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/build_details"
+        android:visibility="gone"
+        android:textAppearance="?android:attr/textAppearanceSmall" />  -->
+    
+<!-- <View android:layout_height="1dp" android:layout_width="fill_parent" android:background="#A9A9A9" />  -->
+
+    <!-- commit -->
+    <TextView
+        android:id="@+id/commitMessageLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Commit Message"
+        android:textSize="12dp"
+      	android:textColor="#8F8F8F"/>
+
+    <TextView
+        android:id="@+id/commitMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+     <!-- status -->
+    <TextView
+        android:id="@+id/statusLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status"
+        android:textColor="#8F8F8F"
+        android:textSize="12dp" />
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+     <!-- deployedOn-->
+     <TextView
+        android:id="@+id/deployedOnLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Deployed"
+        android:textSize="12dp"
+      	android:textColor="#8F8F8F"/>
+
+    <TextView
+        android:id="@+id/deployedOn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+     <!-- createdOn -->
+     <TextView
+        android:id="@+id/createdOnLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Created"
+        android:textSize="12dp"
+      	android:textColor="#8F8F8F"/>
+
+    <TextView
+        android:id="@+id/createdOn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    </LinearLayout>
+    
+    <!-- tests -->
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:id="@+id/testsLayout" android:visibility="gone" >
+
+<!--          <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="@string/tests"
+            android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+        <View android:layout_width="fill_parent" android:layout_height="1dp" android:background="#A9A9A9" />
+-->
+        <ListView
+            android:id="@+id/testsListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+        </ListView>
+    </LinearLayout>
+
+</LinearLayout>

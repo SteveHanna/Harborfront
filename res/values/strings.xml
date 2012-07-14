@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Harborfront</string>
+    <string name="build_details">Build Details</string>
+    <string name="tests">Tests</string>
+    <string name="url_registration">https://harborfrontnotification.apphb.com/Register</string>
+    <string name="url_unregister">https://harborfrontnotification.apphb.com/UnRegister</string>
+    <string name="url_build_notification">https://harborfrontnotification.apphb.com/BuildNotification</string>
+</resources>
