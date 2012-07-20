@@ -45,13 +45,19 @@ public class RestClient {
     public int getResponseCode() {
         return responseCode;
     }
+    public RestClient(String url){
+    	this(url, null);
+    }
 
-    public RestClient(String url)
+    public RestClient(String url, String authToken)
     {
         this.url = url;
         params = new ArrayList<NameValuePair>();
         headers = new ArrayList<NameValuePair>();
         AddHeader("Accept", "application/json");
+        
+        if (authToken != null)
+        	AddHeader("Authorization", "BEARER " + authToken);
     }
 
     public void AddParam(String name, String value)

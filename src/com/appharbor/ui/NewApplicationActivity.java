@@ -31,13 +31,16 @@ public class NewApplicationActivity extends SherlockFragmentActivity{
 
 		String appName = getIntent().getStringExtra("appName");
 		_appSlug = getIntent().getStringExtra("appSlug");
-		
-		if (appName == null)
-			initRegionSpinner();
-		else
-			((EditText) findViewById(R.id.appName)).setText(appName);
 
 		mMode = startActionMode(new AnActionModeOfEpicProportions());
+
+		if (appName == null){
+			mMode.setTitle("New Application");
+			initRegionSpinner();
+		}else {
+			((EditText) findViewById(R.id.appName)).setText(appName);
+			mMode.setTitle("Edit Application");
+		}
 	}
 
 	private void initRegionSpinner(){
@@ -59,10 +62,7 @@ public class NewApplicationActivity extends SherlockFragmentActivity{
 	private final class AnActionModeOfEpicProportions implements ActionMode.Callback {
 
 		public boolean onCreateActionMode(ActionMode mode, Menu menu) {
-
-			menu.add("Done")
-			.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
-
+			menu.add("Done").setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
 			return true;
 		}
 
@@ -80,7 +80,6 @@ public class NewApplicationActivity extends SherlockFragmentActivity{
 		}
 
 		public void onDestroyActionMode(ActionMode mode) { 
-
 			finish();
 		}
 	}
@@ -98,8 +97,7 @@ public class NewApplicationActivity extends SherlockFragmentActivity{
 			if (_appSlug != null)
 				url += "/" + _appSlug;
 						
-			RestClient client = new RestClient(url);
-			client.AddHeader("Authorization", "BEARER " + application.getToken());
+			RestClient client = new RestClient(url, application.getToken());
 			client.AddParam("name", params[0]);
 			
 			if (_appSlug == null)

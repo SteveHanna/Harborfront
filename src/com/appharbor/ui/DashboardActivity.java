@@ -158,8 +158,7 @@ public class DashboardActivity extends SherlockFragmentActivity implements IConf
 		@Override
 		protected JSONArray doInBackground(String... params) {	 
 
-			RestClient client = new RestClient("https://appharbor.com/applications");
-			client.AddHeader("Authorization", "BEARER " + params[0]);
+			RestClient client = new RestClient("https://appharbor.com/applications", params[0]);
 
 			try {
 				client.Execute(RequestMethod.GET);
@@ -245,8 +244,7 @@ public class DashboardActivity extends SherlockFragmentActivity implements IConf
 		@Override
 		protected Void doInBackground(String... params) {
 
-			RestClient client = new RestClient("https://appharbor.com/applications/" + params[0]);
-			client.AddHeader("Authorization", "BEARER " + ((SessionData)getApplication()).getToken());
+			RestClient client = new RestClient("https://appharbor.com/applications/" + params[0], ((SessionData)getApplication()).getToken());
 
 			try {
 				client.Execute(RequestMethod.DELETE);

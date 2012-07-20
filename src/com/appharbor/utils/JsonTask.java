@@ -24,9 +24,7 @@ public abstract class JsonTask<T> extends AsyncTask<String, Void, T> {
 	protected T doInBackground(String... params) {	 
 
 		SessionData application = (SessionData)_activity.getApplication();
-
-		RestClient client = new RestClient(_url);
-		client.AddHeader("Authorization", "BEARER " + application.getToken());
+		RestClient client = new RestClient(_url, application.getToken());
 		
 		try {
 			client.Execute(RequestMethod.GET);

@@ -82,8 +82,7 @@ public class BuildDetailsActivity extends BaseActivity implements IConfirmationD
 		
 		@Override
 		protected Void doInBackground(String... params) {
-			RestClient client = new RestClient(params[1] + "/deploy");
-			client.AddHeader("Authorization", "BEARER " + params[0]);
+			RestClient client = new RestClient(params[1] + "/deploy", params[0]);
 		
 			try {
 				client.Execute(RequestMethod.POST);
@@ -139,8 +138,7 @@ public class BuildDetailsActivity extends BaseActivity implements IConfirmationD
 		@Override
 		protected JSONObject doInBackground(String... params) {	 
 
-			RestClient client = new RestClient(params[1]);
-			client.AddParam("access_token", params[0]);
+			RestClient client = new RestClient(params[1], params[0]);
 
 			try {
 				client.Execute(RequestMethod.GET);
@@ -179,8 +177,7 @@ public class BuildDetailsActivity extends BaseActivity implements IConfirmationD
 
 		@Override
 		protected JSONArray doInBackground(String... params) {
-			RestClient client = new RestClient(params[1]);
-			client.AddParam("access_token", params[0]);
+			RestClient client = new RestClient(params[1], params[0]);
 
 			try {
 				client.Execute(RequestMethod.GET);

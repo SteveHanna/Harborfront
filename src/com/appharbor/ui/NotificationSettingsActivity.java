@@ -109,8 +109,7 @@ public class NotificationSettingsActivity extends SherlockFragmentActivity{
 
 			if(isRegisteredInAH && !((CheckBox)findViewById(R.id.enableNotification)).isChecked()){
 
-				RestClient client = new RestClient(serviceHookUrl);
-				client.AddHeader("Authorization", "BEARER " + app.getToken());
+				RestClient client = new RestClient(serviceHookUrl, app.getToken());
 
 				try {
 					client.Execute(RequestMethod.DELETE);
@@ -124,8 +123,7 @@ public class NotificationSettingsActivity extends SherlockFragmentActivity{
 				}
 			}else if (!isRegisteredInAH && ((CheckBox)findViewById(R.id.enableNotification)).isChecked()){
 
-				RestClient client = new RestClient("https://appharbor.com/applications/" + app.getAppSlug() + "/servicehooks");
-				client.AddHeader("Authorization", "BEARER " + app.getToken());
+				RestClient client = new RestClient("https://appharbor.com/applications/" + app.getAppSlug() + "/servicehooks", app.getToken());
 				client.AddParam("url", getUrl());
 
 				try {
