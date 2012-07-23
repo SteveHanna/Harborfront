@@ -41,7 +41,8 @@ public class DashboardActivity extends SherlockFragmentActivity implements IConf
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.main);
-
+		setSupportProgressBarIndeterminateVisibility(true);
+		
 		try{
 			GCMRegistrar.checkDevice(this);
 			GCMRegistrar.checkManifest(this);

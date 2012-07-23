@@ -14,9 +14,10 @@ public class CollaboratorsActivity extends BaseActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
-		setContentView(R.layout.collaborators);
-
+		setContentView(R.layout.collaborators);		
+		setSupportProgressBarIndeterminateVisibility(true);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		
 		new CollaboratorsTask().execute();
 	}
 	

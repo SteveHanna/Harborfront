@@ -13,9 +13,9 @@ public class HostnamesActivity extends BaseActivity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.hostnames);
+		setSupportProgressBarIndeterminateVisibility(true);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		
 		new HostnamesTask().execute();

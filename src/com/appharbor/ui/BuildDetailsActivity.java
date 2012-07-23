@@ -37,6 +37,7 @@ public class BuildDetailsActivity extends BaseActivity implements IConfirmationD
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.build);
+		setSupportProgressBarIndeterminateVisibility(true);
 		
 		ActionBar actionBar = getSupportActionBar();
 		actionBar.setDisplayHomeAsUpEnabled(true);

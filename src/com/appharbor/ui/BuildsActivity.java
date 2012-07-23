@@ -25,8 +25,9 @@ public class BuildsActivity extends BaseActivity {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.builds);
-		
+		setSupportProgressBarIndeterminateVisibility(true);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		
 		new BuildTask().execute();
 	}
 
